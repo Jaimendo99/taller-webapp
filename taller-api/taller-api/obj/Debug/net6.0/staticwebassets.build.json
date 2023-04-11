@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "XZ+V1ucMFKixJTmTZbjNSIFfyO8xs52rNqkkNnepyGw=",
+  "Source": "taller-api",
+  "BasePath": "_content/taller-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
