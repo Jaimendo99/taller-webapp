@@ -6,7 +6,7 @@ You can create, get, update and delete clients.
 ##### Request
 
     Method: POST
-    Endpoint: /api/Client
+    Endpoint: /api/v1/Client
     Body:
     {   "id": 0,
         "name": "String",
@@ -25,7 +25,7 @@ Ypu can get all clients with this endpoint.
 ##### Request
 
     Method: GET
-    Endpoint: /api/Client
+    Endpoint: /api/v1/Client
 
 ##### Response
         
@@ -47,7 +47,7 @@ You can also get a client by any of its properties using query parameters in the
 ##### Request
 
     Method: GET
-    Endpoint: /api/Client?name&idNum&email&phone
+    Endpoint: /api/v1/Client?name&idNum&email&phone
 
 ##### Response
         
@@ -68,7 +68,7 @@ You can also get a client by any of its properties using query parameters in the
 ##### Request
 
     Method: PUT
-    Endpoint: /api/Client
+    Endpoint: /api/v1/Client
     Body:
     {   "id": 0,
         "name": "String",
@@ -87,7 +87,7 @@ You can also get a client by any of its properties using query parameters in the
 ##### Request
 
     Method: DELETE
-    Endpoint: /api/Client/{id}
+    Endpoint: /api/v1/Client/{id}
 
 ##### Response
         

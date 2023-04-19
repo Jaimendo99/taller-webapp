@@ -5,8 +5,8 @@ using System.Security.Permissions;
 
 namespace taller_api.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    [Route("api/v1/[controller]")]
+    [ApiController]     
     public class ClientController : ControllerBase
     {
         private ShopContext _context;
@@ -15,26 +15,10 @@ namespace taller_api.Controllers
         {
             _context = context;
         }
-/*
-        [HttpGet("{name?}/{idNum?}/{email?}/{phone?}")]
-        public IActionResult Get(string name = "", string idNum = "", string email = "", string phone = "")
-        {
-            var clients = _context.Clients.ToList();
-            if (name != "")
-                clients = clients.FindAll(x => x.Name.Equals(name));
-            if (idNum != "")
-                clients = clients.FindAll(x => x.IdNum.Equals(idNum));
-            if (email != "")
-                clients = clients.FindAll(x => x.Email.Equals(email));
-            if (phone != "")
-                clients = clients.FindAll(x => x.Phone.Equals(phone));
-            return Ok(clients);
-        }
-        */
-        //same as above but with a query string, make sure query are optional
+
         [HttpGet]
         public IActionResult Get([FromQuery] string? name = "", string? idNum = "", string? email = "", string? phone = "")
-        {
+        {   
             var clients = _context.Clients.ToList();
             if (name != "")
                 clients = clients.FindAll(x => x.Name.Equals(name));

@@ -19,5 +19,14 @@ namespace DB
         public float Price { get; set; }
         public int Quantity { get; set; }
 
+   
+        public Product(String name, String description, float price, int quantity)
+        {
+            Name = name;
+            Description = description;
+            Price = price;
+            Quantity = quantity;
+        }
+
     }
 }
