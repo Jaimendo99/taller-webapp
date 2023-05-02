@@ -21,7 +21,7 @@ namespace taller_mvc.Controllers
 
         public async Task<IActionResult> Clients()
         {
-            return View( await GetClients());
+            return View(await GetClients());
         }
 
         public async Task<IActionResult> Products()
@@ -29,13 +29,13 @@ namespace taller_mvc.Controllers
             return View(await GetProducts());
         }
 
-        public async Task<List<Client>> GetClients(string name = "", string idNum="", string email="", string phone="")
+        public async Task<List<Client>> GetClients(string name = "", string idNum = "", string email = "", string phone = "")
         {
             List<Client> clientList = await _apiService.GetClientList(name, idNum, email, phone);
             return clientList;
         }
 
-        public async Task<List<Product>> GetProducts(string name="", string description="", float? price=null, int? quantity= null)
+        public async Task<List<Product>> GetProducts(string name = "", string description = "", float? price = null, int? quantity = null)
         {
             List<Product> productList = await _apiService.GetProducList(name, description, price, quantity);
             return productList;
@@ -65,10 +65,15 @@ namespace taller_mvc.Controllers
             return View(result);
         }
 
+  
         public async Task<IActionResult> DeleteClient(int id)
         {
             bool result = await _apiService.Delete("Client", id);
-            return View(result);
+            if (result)
+            {
+                return RedirectToAction("Clients");
+            }
+            return View(Clients());
         }
 
         public async Task<IActionResult> DeleteProduct(int id)
@@ -76,8 +81,6 @@ namespace taller_mvc.Controllers
             bool result = await _apiService.Delete("Product", id);
             return View(result);
         }
-
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
