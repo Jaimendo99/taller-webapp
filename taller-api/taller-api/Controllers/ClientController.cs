@@ -54,9 +54,9 @@ namespace taller_api.Controllers
 
 
         [HttpDelete]
-        public IActionResult Delete([FromQuery] string idNum)
+        public IActionResult Delete([FromQuery] string Id)
         {
-            Client client = _context.Clients.ToList().Find(x => x.IdNum.Equals(idNum));
+            Client client = _context.Clients.ToList().Find(x => (x.Id).ToString().Equals(Id));
             if (client != null)
             {
                 _context.Clients.Remove(client);
@@ -73,7 +73,7 @@ namespace taller_api.Controllers
         [HttpPut]
         public IActionResult Put([FromBody] Client client)
         {
-            Client client1 = _context.Clients.ToList().Find(x => x.IdNum.Equals(client.IdNum));
+            Client client1 = _context.Clients.ToList().Find(x => x.Id.Equals(client.Id));
             if (client1 != null)
             {
                 client1.Name = client.Name;

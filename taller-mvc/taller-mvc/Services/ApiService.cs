@@ -113,7 +113,7 @@ namespace taller_mvc.Services
                 client.BaseAddress = new Uri(_baseUrl);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                string endPoint = $"api/v1/{className}?idNum={id}";
+                string endPoint = $"api/v1/{className}?id={id}";
                 var result = await client.DeleteAsync(endPoint);
                 if (result.IsSuccessStatusCode)
                 {

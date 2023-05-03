@@ -48,10 +48,11 @@ namespace taller_api.Controllers
 
         [HttpPut]
         public IActionResult Put([FromBody] Product product)
-        {
-            Product product1 = _context.Products.ToList().Find(x => x.Name.Equals(product.Name));
+        { 
+            Product product1 = _context.Products.ToList().Find(x => x.Id == product.Id);
             if (product1 != null)
             {
+                product1.Name = product.Name;
                 product1.Description = product.Description;
                 product1.Price = product.Price;
                 product1.Quantity = product.Quantity;
@@ -65,9 +66,9 @@ namespace taller_api.Controllers
         }
 
         [HttpDelete]
-        public IActionResult Delete([FromQuery] string name)
+        public IActionResult Delete([FromQuery] string id)
         {
-            Product product = _context.Products.ToList().Find(x => x.Name.Equals(name));
+            Product product = _context.Products.ToList().Find(x => x.Id.ToString().Equals(id));
             if (product != null)
             {
                 _context.Products.Remove(product);

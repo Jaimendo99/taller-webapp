@@ -44,25 +44,41 @@ namespace taller_mvc.Controllers
         public async Task<IActionResult> CreateClient(Client client)
         {
             bool result = await _apiService.Create(client);
-            return View(result);
+            if (result)
+            {
+                return RedirectToAction("Clients");
+            }
+            return BadRequest();
         }
 
         public async Task<IActionResult> CreateProduct(Product product)
         {
             bool result = await _apiService.Create(product);
-            return View(result);
+            if (result)
+            {
+                return RedirectToAction("Products");
+            }
+            return BadRequest();
         }
-
+        
         public async Task<IActionResult> UpdateClient(Client client)
         {
             bool result = await _apiService.Update(client);
-            return View(result);
+            if (result)
+            {
+                return RedirectToAction("Clients");
+            }
+            return BadRequest();
         }
 
         public async Task<IActionResult> UpdateProduct(Product product)
         {
             bool result = await _apiService.Update(product);
-            return View(result);
+            if (result)
+            {
+                return RedirectToAction("Products");
+            }
+            return BadRequest();
         }
 
   
@@ -73,13 +89,17 @@ namespace taller_mvc.Controllers
             {
                 return RedirectToAction("Clients");
             }
-            return View(Clients());
+            return BadRequest();
         }
 
         public async Task<IActionResult> DeleteProduct(int id)
         {
             bool result = await _apiService.Delete("Product", id);
-            return View(result);
+            if (result)
+            {
+                return RedirectToAction("Products");
+            }
+            return BadRequest();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
