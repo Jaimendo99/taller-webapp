@@ -79,6 +79,7 @@ namespace taller_api.Controllers
                 client1.Name = client.Name;
                 client1.Email = client.Email;
                 client1.Phone = client.Phone;
+                client1.IdNum = client.IdNum;
                 _context.SaveChanges();
                 return Ok("Client updated");
             }

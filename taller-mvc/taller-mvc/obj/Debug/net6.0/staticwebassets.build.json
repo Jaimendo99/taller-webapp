@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DBsdOVJn8INkBgkO/DK7+C6/Vw1MoqAYTSyaBwBgVM0=",
+  "Hash": "z0RnZ4q+wvT9YQSw13qGfYb/wsYD69e5YLGFxuCP5V8=",
   "Source": "taller-mvc",
   "BasePath": "_content/taller-mvc",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\jaim_\\Documents\\Projects\\taller-webapp\\taller-mvc\\taller-mvc\\wwwroot\\js\\productScript.js",
+      "SourceId": "taller-mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jaim_\\Documents\\Projects\\taller-webapp\\taller-mvc\\taller-mvc\\wwwroot\\",
+      "BasePath": "_content/taller-mvc",
+      "RelativePath": "js/productScript.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\productScript.js"
+    },
+    {
+      "Identity": "C:\\Users\\jaim_\\Documents\\Projects\\taller-webapp\\taller-mvc\\taller-mvc\\wwwroot\\js\\script.js",
+      "SourceId": "taller-mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jaim_\\Documents\\Projects\\taller-webapp\\taller-mvc\\taller-mvc\\wwwroot\\",
+      "BasePath": "_content/taller-mvc",
+      "RelativePath": "js/script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\script.js"
     },
     {
       "Identity": "C:\\Users\\jaim_\\Documents\\Projects\\taller-webapp\\taller-mvc\\taller-mvc\\wwwroot\\js\\site.js",

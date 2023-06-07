@@ -29,4 +29,94 @@ body {
     --bs-btn-active-color: var(--bs-btn-hover-color);
     --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
     --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+}s
+
+.card{
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.grid-container{
+    display: inline-grid;
+    width: auto;
+    grid-template-columns: 1.5fr 1.5fr 0.5fr;
+    grid-column-gap: 20px;
+
+}
+
+.item {
+    grid-column-start:auto;
+    grid-column-end: auto;
+    justify-self:center;
+
+}
+
+.item-center {
+    grid-column-start: auto;
+    grid-column-end: auto;
+    justify-self: center;
+    align-self: center;
+}
+
+.item-end {
+    grid-column-start: auto;
+    grid-column-end: auto;
+    justify-self: center;
+    align-self: end;
+}
+
+.img-client {
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.card-mine {
+    border-radius: 25px;
+
+    background-color: #f2f6f9;
+}
+
+.name-client {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #31415b;
+    font-size: 5rem;
+}
+
+.detalis-client-1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 'Arial Narrow', Arial, sans-serif;
+color: #31415b;
+font-size: 1.5rem;
+font-weight:200;
+}
+
+.detalis-client-0{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:black;
+font-size: 1.5rem;
+font-weight:100;
+
+}
+
+
+.button-client{
+    border-radius: 50%;
+    background-color: #31415b;
+    color: #f2f6f9;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    margin:10px;
+}
+
+.h4-table{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #31415b;
+    font-size: 2rem;
+    font-weight:300;
+    margin-left:10px;
+}
+.table-columns{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #31415b;
+    font-size: 1.2rem;
 }

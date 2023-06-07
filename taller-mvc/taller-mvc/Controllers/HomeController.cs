@@ -29,19 +29,53 @@ namespace taller_mvc.Controllers
             return View(await GetProducts());
         }
 
-        public async Task<List<Client>> GetClients(string name = "", string idNum = "", string email = "", string phone = "")
+        public async Task<List<Client>> GetClients()
         {
-            List<Client> clientList = await _apiService.GetClientList(name, idNum, email, phone);
+            List<Client> clientList = await _apiService.GetClientList();
             return clientList;
         }
 
-        public async Task<List<Product>> GetProducts(string name = "", string description = "", float? price = null, int? quantity = null)
+        public async Task<IActionResult> ClientDetails(int id)
         {
-            List<Product> productList = await _apiService.GetProducList(name, description, price, quantity);
+            return View(await GetClientDetails(id));
+        }
+
+        public async Task<Tuple<ClientDetails, List<ProductDetails>>> GetClientDetails(int id)
+        {
+            ClientDetails clientD =await  _apiService.GetClientDetails(id);
+            List<ProductDetails> products = new();
+            foreach (var item in clientD.shoppingLists)
+            {
+                products.Add(await _apiService.GetProductDetails(item.ProductId));
+            }
+            
+            return Tuple.Create(clientD,products);
+        }
+
+        public async Task<List<Product>> GetProducts()
+        {
+            List<Product> productList = await _apiService.GetProducList();
             return productList;
         }
 
-        public async Task<IActionResult> CreateClient(Client client)
+        public async Task<IActionResult> ProductDetails(int id)
+        {
+			return View(await GetProductDetails(id));
+		}
+
+        public async Task<Tuple<ProductDetails, List<ClientDetails>>> GetProductDetails(int id)
+        {
+            ProductDetails productD = await _apiService.GetProductDetails(id);
+			List<ClientDetails> clients = new();
+			foreach (var item in productD.shoppingLists)
+            {
+				clients.Add(await _apiService.GetClientDetails(item.ClientId));
+			}
+			return Tuple.Create(productD, clients);
+        }
+
+
+		public async Task<IActionResult> CreateClient(Client client)
         {
             bool result = await _apiService.Create(client);
             if (result)
@@ -102,6 +136,10 @@ namespace taller_mvc.Controllers
             return BadRequest();
         }
 
+
+        
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
@@ -109,3 +147,4 @@ namespace taller_mvc.Controllers
         }
     }
 }
+

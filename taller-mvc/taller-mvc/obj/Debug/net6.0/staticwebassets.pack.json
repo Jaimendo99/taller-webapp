@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\jaim_\\Documents\\Projects\\taller-webapp\\taller-mvc\\taller-mvc\\wwwroot\\js\\productScript.js",
+      "PackagePath": "staticwebassets\\js\\productScript.js"
+    },
+    {
+      "Id": "C:\\Users\\jaim_\\Documents\\Projects\\taller-webapp\\taller-mvc\\taller-mvc\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
       "Id": "C:\\Users\\jaim_\\Documents\\Projects\\taller-webapp\\taller-mvc\\taller-mvc\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

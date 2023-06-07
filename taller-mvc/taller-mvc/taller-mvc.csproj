@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>taller_mvc</RootNamespace>
   </PropertyGroup>
@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <None Include="Views\Shared\Cform.cshtml" />
+    <None Include="wwwroot\js\script.js" />
   </ItemGroup>
 
   <ItemGroup>
